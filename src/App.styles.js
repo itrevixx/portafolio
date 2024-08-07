@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import font from "./assets/batmfa__.ttf";
 
 export const Container = styled.div`
   width: 1024px;
