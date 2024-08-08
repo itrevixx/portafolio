@@ -4,7 +4,6 @@ import {
   Container,
   Header,
   SobreMi,
-  Mail,
   StyledInput,
   SendButton,
   CopyButton,
@@ -23,6 +22,10 @@ import {
   HabilidadesRow,
   Habilidad,
   Recomendaciones,
+  Info,
+  RecomendacionesRow,
+  Recomendacion,
+  MoreInfo,
 } from "./App.styles";
 import image from "./assets/159159635.png";
 import cv from "./assets/Currículum.pdf";
@@ -76,38 +79,44 @@ const App = () => {
         <a href="#testimonios">Testimonios</a>
       </Header>
       <h2 id="sobre-mi">Sobre Mi</h2>
-      <SobreMi>
-        <img src={image} alt="Sergi Treviño" />
-        <div>
-          <h3>Sergi Treviño</h3>
-          <p>
-            Desarrollador Full-Stack, apasionado por la programación y el
-            desarrollo tecnológico.
-          </p>
-        </div>
-      </SobreMi>
-      <Mail>
-        <h3>CV</h3>
-        <OpenCV onClick={handleOpenCV}>
-          <MdContactPage />
-        </OpenCV>
-        <h3>Mail</h3>
-        <StyledInput
-          type="text"
-          id="email"
-          placeholder="itrevixx@gmail.com"
-          disabled
-          value="itrevixx@gmail.com"
-        />
-        <a href="mailto:itrevixx@gmail.com">
-          <SendButton>
-            <VscSend />
-          </SendButton>
-        </a>
-        <CopyButton onClick={handleCopy}>
-          <FaRegCopy />
-        </CopyButton>
-      </Mail>
+      <Info>
+        <SobreMi>
+          <img src={image} alt="Sergi Treviño" />
+          <div>
+            <h3>Sergi Treviño</h3>
+            <p>
+              Desarrollador Full-Stack, apasionado por la programación y el
+              desarrollo tecnológico.
+            </p>
+          </div>
+        </SobreMi>
+        <MoreInfo>
+          <li>
+            <h3>CV</h3>
+            <OpenCV onClick={handleOpenCV}>
+              <MdContactPage />
+            </OpenCV>
+          </li>
+          <li>
+            <h3>Mail</h3>
+            <StyledInput
+              type="text"
+              id="email"
+              placeholder="itrevixx@gmail.com"
+              disabled
+              value="itrevixx@gmail.com"
+            />
+            <a href="mailto:itrevixx@gmail.com">
+              <SendButton>
+                <VscSend />
+              </SendButton>
+            </a>
+            <CopyButton onClick={handleCopy}>
+              <FaRegCopy />
+            </CopyButton>
+          </li>
+        </MoreInfo>
+      </Info>
       <Social>
         <h2 id="social">Social</h2>
         <SocialRow>
@@ -201,6 +210,11 @@ const App = () => {
       </Habilidades>
       <Recomendaciones>
         <h2 id="testimonios">Testimonios</h2>
+        <RecomendacionesRow>
+          <Recomendacion>
+            <p></p>
+          </Recomendacion>
+        </RecomendacionesRow>
       </Recomendaciones>
     </Container>
   );

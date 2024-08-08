@@ -28,13 +28,17 @@ export const Header = styled.ul`
   }
 `;
 
+export const Info = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 export const SobreMi = styled.div`
   display: flex;
   align-items: center; /* Alinea verticalmente la imagen y el h2 */
   padding: 10px; /* Espacio alrededor del contenido */
   border-radius: 10px; /* Opcional, para bordes redondeados */
   gap: 20px; /* Espacio entre la imagen y el h2 */
-  margin-bottom: 20px;
 
   img {
     width: 150px;
@@ -61,33 +65,44 @@ export const SobreMi = styled.div`
   }
 `;
 
-export const Mail = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Alinea verticalmente los elementos en el centro */
-  gap: 15px; /* Ajusta el espacio entre los elementos */
+export const MoreInfo = styled.ul`
+  list-style-type: none;
   margin-bottom: 60px;
+  margin-top: 0;
+  margin: auto;
+  padding: 0; /* Elimina el padding predeterminado */
+  width: 62%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+  display: flex;
+  gap: 10px;
+  flex-direction: column; /* Alinea los elementos en columna */
 
-  h2 {
-    color: #f5b44d;
+  li {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el contenido */
+    gap: 15px;
+    border-radius: 5px; /* Bordes redondeados opcionales */
+    color: white;
+
+    h3 {
+      margin: 0;
+      margin-right: 10px; /* Espacio entre el título y el resto del contenido */
+    }
   }
 `;
 
 export const StyledInput = styled.input`
-  padding: 5px;
-  border: 1px solid #f5b44d;
-  border-radius: 5px;
+  border: 0px transparent;
   background-color: transparent;
   color: white;
+  font-family: "MyFont";
+  width: 175px;
 `;
 
 export const StyledButton = styled.button`
-  padding: 5px;
   border: none;
   width: 50px;
   background-color: transparent;
   color: white;
-  border-radius: 5px;
   cursor: pointer;
   position: relative; /* Necesario para posicionar el tooltip */
 
@@ -149,6 +164,7 @@ export const Social = styled.div`
     color: #f5b44d;
     margin-bottom: 50px;
   }
+  margin-top: 50px;
   margin-bottom: 100px;
 `;
 
@@ -310,3 +326,7 @@ export const Habilidad = styled.div`
 `;
 
 export const Recomendaciones = styled.div``;
+
+export const RecomendacionesRow = styled.div``;
+
+export const Recomendacion = styled.div``;
