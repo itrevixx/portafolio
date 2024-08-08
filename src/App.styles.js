@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const Container = styled.div`
   width: 1024px;
@@ -25,11 +25,30 @@ export const Header = styled.ul`
   a {
     cursor: pointer;
     color: white;
-  }
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Transición suave del color */
 
-  a:hover {
-    text-decoration: underline;
-    background-color: #f5b44d;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #f5b44d;
+      visibility: hidden;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover {
+      color: #f5b44d; /* Cambia el color del texto al hacer hover */
+
+      &:before {
+        visibility: visible;
+        width: 100%;
+      }
+    }
   }
 
   @media (max-width: 600px) {
@@ -85,24 +104,24 @@ export const SobreMi = styled.div`
 export const MoreInfo = styled.ul`
   list-style-type: none;
   margin-bottom: 60px;
-  margin-top: 0;
   margin: auto;
   padding: 0;
-  width: 62%;
+  width: 66%;
   display: flex;
-  gap: 10px;
   flex-direction: column;
 
   li {
     display: flex;
     align-items: center;
-    gap: 15px;
-    border-radius: 5px;
+    gap: 10px; /* Aumentado para más espacio entre iconos y textos */
+    border-radius: 10px; /* Incrementado para bordes más suaves */
+    padding: 15px; /* Añadido padding para dar más espacio */
     color: white;
 
     h3 {
       margin: 0;
-      margin-right: 10px;
+      margin-right: 15px;
+      color: #f5b44d; /* Color coherente con el tema */
     }
   }
 
@@ -122,22 +141,23 @@ export const StyledInput = styled.input`
 
 export const StyledButton = styled.button`
   border: none;
-  width: 50px;
   background-color: transparent;
   color: white;
   cursor: pointer;
   position: relative;
-
-  svg {
-    font-size: 1.5rem;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Transición suave */
 
   &:hover {
-    background-color: #f5b44d;
+    transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+    background-color: #f5b44d; /* Fondo al pasar el mouse */
+    border-radius: 5px; /* Añadido para mejor integración con el estilo hover */
   }
 
   &::after {
-    content: "";
     position: absolute;
     top: -30px;
     left: 50%;
@@ -150,6 +170,7 @@ export const StyledButton = styled.button`
     white-space: nowrap;
     z-index: 10;
     opacity: 0;
+    transition: opacity 0.3s ease; /* Transición suave para la aparición del texto */
   }
 
   &:hover::after {
@@ -216,7 +237,27 @@ export const SocialContent = styled.div`
   gap: 10px;
 
   h3 {
-    color: black;
+    color: white;
+  }
+`;
+
+// Animación para el relleno del botón
+const fillAnimation = keyframes`
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+`;
+
+// Animación para el retroceso de la barra
+const unfillAnimation = keyframes`
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
   }
 `;
 
@@ -228,46 +269,40 @@ export const SocialButton = styled.button`
   border-radius: 15px;
   cursor: pointer;
   position: relative;
+  background-color: transparent;
+  color: white;
+  overflow: hidden;
+  font-size: 1rem;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+  z-index: 1; /* Asegura que el contenido del botón esté encima */
 
   svg {
     font-size: 1.5rem;
   }
 
-  &:hover {
-    background-color: #f5b44d;
-    border: 2px solid white;
-  }
-
-  &::after {
+  &::before {
     content: "";
     position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #333;
-    color: white;
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 0.8rem;
-    white-space: nowrap;
-    z-index: 10;
-    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f5b44d;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+    z-index: -1; /* Coloca el relleno detrás del texto */
   }
 
-  &:hover::after {
-    opacity: 1;
+  &:hover::before {
+    transform: translateX(0);
+    animation: ${fillAnimation} 0.5s forwards;
   }
-`;
 
-export const OpenLinkedin = styled(SocialButton)`
-  &:hover::after {
-    content: "Ir a Linkedin";
-  }
-`;
-
-export const OpenGithub = styled(SocialButton)`
-  &:hover::after {
-    content: "Ir a GitHub";
+  &:not(:hover)::before {
+    animation: ${unfillAnimation} 0.5s forwards;
   }
 `;
 
@@ -296,6 +331,10 @@ export const Proyecto = styled.div`
     border: 2px solid #f5b44d;
     cursor: pointer;
     margin: 20px;
+    transition: transform 0.3s ease; /* Añade una transición suave */
+    &:hover {
+      transform: scale(1.1); /* Zoom al hacer hover */
+    }
   }
 `;
 export const ProyectosRow = styled.div`

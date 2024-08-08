@@ -11,8 +11,6 @@ import {
   Social,
   SocialRow,
   SocialContent,
-  OpenLinkedin,
-  OpenGithub,
   Proyectos,
   Proyecto,
   ProyectosRow,
@@ -23,6 +21,7 @@ import {
   Habilidad,
   Info,
   MoreInfo,
+  SocialButton,
 } from "./App.styles";
 import image from "./assets/159159635.png";
 import cv from "./assets/Currículum.pdf";
@@ -116,18 +115,18 @@ const App = () => {
       <Social>
         <h2 id="social">Social</h2>
         <SocialRow>
-          <OpenLinkedin onClick={handleOpenLinkedin}>
+          <SocialButton onClick={handleOpenLinkedin}>
             <SocialContent>
               <GrLinkedin />
               <h3>Linkedin</h3>
             </SocialContent>
-          </OpenLinkedin>
-          <OpenGithub onClick={handleOpenGithub}>
+          </SocialButton>
+          <SocialButton onClick={handleOpenGithub}>
             <SocialContent>
               <FaSquareGithub />
               <h3>Github</h3>
             </SocialContent>
-          </OpenGithub>
+          </SocialButton>
         </SocialRow>
       </Social>
       <Proyectos>
@@ -140,9 +139,9 @@ const App = () => {
               acertar el pecado del otro para que pringue.
             </p>
             <p>
-              El proyecto se hizo con un equipo de 5, me encargue principalmente
-              de la parte del back, aunque ayudé a implemntar algunas
-              fucnionalidades en el front
+              El proyecto se hizo con un equipo de cinco personas. Me encargué
+              principalmente de la parte del back-end, aunque también ayudé a
+              implementar algunas funcionalidades en el front-end.
             </p>
             <TecnologiasProyectoRow>
               <TecnologiaProyecto>
