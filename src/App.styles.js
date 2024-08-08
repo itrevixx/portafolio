@@ -4,10 +4,15 @@ export const Container = styled.div`
   width: 1024px;
   margin: auto;
   display: flex;
-  flex-direction: column; /* Cambiado a columna para que los elementos se apilen */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: rgba(11, 13, 43, 0.96);
+
+  @media (max-width: 600px) {
+    width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */
+    padding: 10px; /* Añade un poco de padding para los márgenes */
+  }
 `;
 
 export const Header = styled.ul`
@@ -15,7 +20,7 @@ export const Header = styled.ul`
   padding: 10px 20px;
   display: flex;
   gap: 20px;
-  margin-bottom: 50px; /* Separación inferior para alejar la lista de la imagen */
+  margin-bottom: 50px;
 
   a {
     cursor: pointer;
@@ -26,6 +31,12 @@ export const Header = styled.ul`
     text-decoration: underline;
     background-color: #f5b44d;
   }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center; /* Centra los enlaces en pantallas pequeñas */
+  }
 `;
 
 export const Info = styled.div`
@@ -35,33 +46,39 @@ export const Info = styled.div`
 
 export const SobreMi = styled.div`
   display: flex;
-  align-items: center; /* Alinea verticalmente la imagen y el h2 */
-  padding: 10px; /* Espacio alrededor del contenido */
-  border-radius: 10px; /* Opcional, para bordes redondeados */
-  gap: 20px; /* Espacio entre la imagen y el h2 */
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  gap: 20px;
 
   img {
     width: 150px;
-    height: 150px; /* Asegura que la imagen sea circular */
-    border-radius: 50%; /* Bordes redondeados para la imagen */
+    height: 150px;
+    border-radius: 50%;
     border: 4px solid #f5b44d;
   }
 
   div {
     display: flex;
     flex-direction: column;
-    gap: 5px; /* Espacio entre el título y la descripción */
+    gap: 5px;
     color: white;
   }
 
   h2 {
-    margin: 0; /* Elimina el margen predeterminado del título */
+    margin: 0;
     color: #f5b44d;
   }
 
   p {
-    margin: 0; /* Elimina el margen predeterminado del párrafo */
-    padding-top: 10px; /* Espacio entre el título y el párrafo */
+    margin: 0;
+    padding-top: 10px;
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 `;
 
@@ -70,23 +87,28 @@ export const MoreInfo = styled.ul`
   margin-bottom: 60px;
   margin-top: 0;
   margin: auto;
-  padding: 0; /* Elimina el padding predeterminado */
-  width: 62%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+  padding: 0;
+  width: 62%;
   display: flex;
   gap: 10px;
-  flex-direction: column; /* Alinea los elementos en columna */
+  flex-direction: column;
 
   li {
     display: flex;
-    align-items: center; /* Alinea verticalmente el contenido */
+    align-items: center;
     gap: 15px;
-    border-radius: 5px; /* Bordes redondeados opcionales */
+    border-radius: 5px;
     color: white;
 
     h3 {
       margin: 0;
-      margin-right: 10px; /* Espacio entre el título y el resto del contenido */
+      margin-right: 10px;
     }
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    align-items: center; /* Centra los elementos de la lista */
   }
 `;
 
@@ -104,21 +126,20 @@ export const StyledButton = styled.button`
   background-color: transparent;
   color: white;
   cursor: pointer;
-  position: relative; /* Necesario para posicionar el tooltip */
+  position: relative;
 
   svg {
-    font-size: 1.5rem; /* Ajusta el tamaño del icono */
+    font-size: 1.5rem;
   }
 
   &:hover {
-    background-color: #f5b44d; /* Cambia el color al pasar el ratón */
+    background-color: #f5b44d;
   }
 
-  /* Tooltip común, sin texto */
   &::after {
-    content: ""; /* Este contenido se llenará con los estilos en el hover */
+    content: "";
     position: absolute;
-    top: -30px; /* Ajusta la posición del tooltip */
+    top: -30px;
     left: 50%;
     transform: translateX(-50%);
     background-color: #333;
@@ -132,27 +153,25 @@ export const StyledButton = styled.button`
   }
 
   &:hover::after {
-    opacity: 1; /* Muestra el tooltip al hacer hover */
+    opacity: 1;
   }
 `;
 
 export const OpenCV = styled(StyledButton)`
   &:hover::after {
-    content: "Ver CV"; /* Texto del tooltip para el botón */
+    content: "Ver CV";
   }
 `;
 
-/* Botón para enviar correo */
 export const SendButton = styled(StyledButton)`
   &:hover::after {
-    content: "Enviar correo"; /* Texto del tooltip para el botón */
+    content: "Enviar correo";
   }
 `;
 
-/* Botón para copiar */
 export const CopyButton = styled(StyledButton)`
   &:hover::after {
-    content: "Copiar correo"; /* Texto del tooltip para el segundo botón */
+    content: "Copiar correo";
   }
 `;
 
@@ -166,6 +185,10 @@ export const Social = styled.div`
   }
   margin-top: 50px;
   margin-bottom: 100px;
+
+  @media (max-width: 600px) {
+    width: 100%; /* Ocupa todo el ancho disponible */
+  }
 `;
 
 export const SocialRow = styled.div`
@@ -174,6 +197,12 @@ export const SocialRow = styled.div`
   align-items: center;
   justify-content: center;
   gap: 50px;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center; /* Centra los elementos */
+  }
 `;
 
 export const SocialContent = styled.div`
@@ -185,6 +214,7 @@ export const SocialContent = styled.div`
   height: 50px;
   border-radius: 15px;
   gap: 10px;
+
   h3 {
     color: black;
   }
@@ -200,19 +230,18 @@ export const SocialButton = styled.button`
   position: relative;
 
   svg {
-    font-size: 1.5rem; /* Ajusta el tamaño del icono */
+    font-size: 1.5rem;
   }
 
   &:hover {
-    background-color: #f5b44d; /* Cambia el color al pasar el ratón */
+    background-color: #f5b44d;
     border: 2px solid white;
   }
 
-  /* Tooltip común, sin texto */
   &::after {
-    content: ""; /* Este contenido se llenará con los estilos en el hover */
+    content: "";
     position: absolute;
-    top: -30px; /* Ajusta la posición del tooltip */
+    top: -30px;
     left: 50%;
     transform: translateX(-50%);
     background-color: #333;
@@ -226,19 +255,19 @@ export const SocialButton = styled.button`
   }
 
   &:hover::after {
-    opacity: 1; /* Muestra el tooltip al hacer hover */
+    opacity: 1;
   }
 `;
 
 export const OpenLinkedin = styled(SocialButton)`
   &:hover::after {
-    content: "Ir a Linkedin"; /* Texto del tooltip para el botón */
+    content: "Ir a Linkedin";
   }
 `;
 
 export const OpenGithub = styled(SocialButton)`
   &:hover::after {
-    content: "Ir a GitHub"; /* Texto del tooltip para el botón */
+    content: "Ir a GitHub";
   }
 `;
 
@@ -249,18 +278,18 @@ export const Proyectos = styled.div`
     text-align: center;
     color: #f5b44d;
   }
-`;
 
-export const ProyectosRow = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @media (max-width: 600px) {
+    width: 100%;
+    text-align: center;
+  }
 `;
 
 export const Proyecto = styled.div`
   h3 {
     color: #f5b44d;
   }
+
   img {
     width: 350px;
     height: 300px;
@@ -269,12 +298,29 @@ export const Proyecto = styled.div`
     margin: 20px;
   }
 `;
+export const ProyectosRow = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center; /* Centra los elementos */
+  }
+`;
 
 export const TecnologiasProyectoRow = styled.div`
   display: flex;
   align-items: center;
   justify-content: left;
   gap: 15px;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center; /* Centra los elementos */
+  }
 `;
 
 export const TecnologiaProyecto = styled.div`
@@ -286,6 +332,7 @@ export const TecnologiaProyecto = styled.div`
   padding-left: 10px;
   padding-right: 10px;
   margin-bottom: 20px;
+
   p {
     font-size: 0.7rem;
   }
@@ -294,13 +341,20 @@ export const TecnologiaProyecto = styled.div`
 export const Habilidades = styled.div`
   width: 80%;
   margin-bottom: 50px;
+
   h2 {
     text-align: center;
     color: #f5b44d;
   }
+
   h3 {
     text-align: left;
     color: #f5b44d;
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    text-align: center;
   }
 `;
 
@@ -309,6 +363,12 @@ export const HabilidadesRow = styled.div`
   align-items: center;
   gap: 15px;
   flex-wrap: wrap;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center; /* Centra los elementos */
+  }
 `;
 
 export const Habilidad = styled.div`
@@ -320,13 +380,8 @@ export const Habilidad = styled.div`
   padding-left: 10px;
   padding-right: 10px;
   margin-bottom: 20px;
+
   p {
     font-size: 1.4rem;
   }
 `;
-
-export const Recomendaciones = styled.div``;
-
-export const RecomendacionesRow = styled.div``;
-
-export const Recomendacion = styled.div``;

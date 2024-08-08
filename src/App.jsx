@@ -21,10 +21,7 @@ import {
   Habilidades,
   HabilidadesRow,
   Habilidad,
-  Recomendaciones,
   Info,
-  RecomendacionesRow,
-  Recomendacion,
   MoreInfo,
 } from "./App.styles";
 import image from "./assets/159159635.png";
@@ -76,7 +73,6 @@ const App = () => {
         <a href="#social">Social</a>
         <a href="#proyectos">Proyectos</a>
         <a href="#habilidades">Habilidades</a>
-        <a href="#testimonios">Testimonios</a>
       </Header>
       <h2 id="sobre-mi">Sobre Mi</h2>
       <Info>
@@ -208,14 +204,6 @@ const App = () => {
           </Habilidad>
         </HabilidadesRow>
       </Habilidades>
-      <Recomendaciones>
-        <h2 id="testimonios">Testimonios</h2>
-        <RecomendacionesRow>
-          <Recomendacion>
-            <p></p>
-          </Recomendacion>
-        </RecomendacionesRow>
-      </Recomendaciones>
     </Container>
   );
 };
