@@ -27,6 +27,8 @@ import image from "./assets/159159635.png";
 import cv from "./assets/Currículum.pdf";
 import purgatio from "./assets/purgatio.png";
 import purgatioLobby from "./assets/lobby.png";
+import rickAndMorty from "./assets/home.png";
+import rickAndMorty2 from "./assets/foto2.png";
 import { VscSend } from "react-icons/vsc";
 import { FaRegCopy } from "react-icons/fa";
 import { MdContactPage } from "react-icons/md";
@@ -65,15 +67,20 @@ const App = () => {
     window.open(purgatio, "_blank");
   };
 
+  const handleRickAndMorty = () => {
+    const rickAndMorty = "https://api-rick-morty-theta.vercel.app";
+    window.open(rickAndMorty, "_blank");
+  };
+
   return (
     <Container>
       <Header>
-        <a href="#sobre-mi">Sobre Mi</a>
+        <a href="#sobre-mi">Sobre Mí</a>
         <a href="#social">Social</a>
         <a href="#proyectos">Proyectos</a>
         <a href="#habilidades">Habilidades</a>
       </Header>
-      <h2 id="sobre-mi">Sobre Mi</h2>
+      <h2 id="sobre-mi">Sobre Mí</h2>
       <Info>
         <SobreMi>
           <img src={image} alt="Sergi Treviño" />
@@ -135,7 +142,7 @@ const App = () => {
           <Proyecto>
             <h3>Purgatio</h3>
             <p>
-              Juego para jugar con amigos o desconocidos. En el cual tendras que
+              Juego para jugar con amigos o desconocidos, en el cual tendrás que
               acertar el pecado del otro para que pringue.
             </p>
             <p>
@@ -165,6 +172,31 @@ const App = () => {
             </TecnologiasProyectoRow>
             <img onClick={handlePurgatio} src={purgatio} alt="" />
             <img onClick={handlePurgatio} src={purgatioLobby} alt="" />
+          </Proyecto>
+          <Proyecto>
+            <h3>Rick y Morty</h3>
+            <p>
+              Este proyecto personal está desarrollado con React y aprovecha la
+              API de Rick y Morty para buscar personajes, ver detalles en
+              tarjetas interactivas y navegar a través de los resultados con
+              paginación.
+            </p>
+            <TecnologiasProyectoRow>
+              <TecnologiaProyecto>
+                <FaReact /> <p>React</p>
+              </TecnologiaProyecto>
+              <TecnologiaProyecto>
+                <IoLogoJavascript /> <p>JavaScript</p>
+              </TecnologiaProyecto>
+              <TecnologiaProyecto>
+                <FaHtml5 /> <p>Html</p>
+              </TecnologiaProyecto>
+              <TecnologiaProyecto>
+                <FaCss3Alt /> <p>CSS</p>
+              </TecnologiaProyecto>
+            </TecnologiasProyectoRow>
+            <img onClick={handleRickAndMorty} src={rickAndMorty} alt="" />
+            <img onClick={handleRickAndMorty} src={rickAndMorty2} alt="" />
           </Proyecto>
         </ProyectosRow>
       </Proyectos>

@@ -1,11 +1,11 @@
 import { createGlobalStyle } from "styled-components";
-import font from "../assets/batmfa__.ttf";
+import font from "../assets/Bat.ttf";
 import race from "../assets/formula-1-race-car-digital-art-4k-wallpaper-uhdpaper.com-133@3@a.jpg";
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
-        font-family: myFont;
-        src: url(${font});
+    font-family: 'myFont';
+    src: url(${font}) format('truetype'); /* O usa 'woff', 'woff2', etc., si estás utilizando otros formatos */
     }
     body {
     font-family: 'myFont', sans-serif;

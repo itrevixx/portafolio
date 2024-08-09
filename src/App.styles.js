@@ -333,7 +333,7 @@ export const Proyecto = styled.div`
     margin: 20px;
     transition: transform 0.3s ease; /* Añade una transición suave */
     &:hover {
-      transform: scale(1.1); /* Zoom al hacer hover */
+      transform: scale(1.23); /* Zoom al hacer hover */
     }
   }
 `;
@@ -341,6 +341,7 @@ export const ProyectosRow = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 
   @media (max-width: 600px) {
     flex-direction: column;
