@@ -41,6 +41,11 @@ import { FaHtml5 } from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import { FaJava } from "react-icons/fa";
+import { Logros } from "./App.styles";
+import { LogrosRow } from "./App.styles";
+import { Logro } from "./App.styles";
+import Azure from "./assets/microsoft-certified-azure-fundamentals.png";
+import Esplai from "./assets/Fundación Esplai. ICT Youth Employment. - Java Junior Developer - 2024-09-06.png";
 
 const App = () => {
   const handleCopy = () => {
@@ -72,12 +77,24 @@ const App = () => {
     window.open(rickAndMorty, "_blank");
   };
 
+  const handleJava = () => {
+    const java = "https://badgr.com/public/assertions/NlPQidDzS6q89CgBkP36kA";
+    window.open(java, "_blank");
+  };
+
+  const handleAzure = () => {
+    const azure =
+      "https://www.credly.com/badges/8f76b509-d954-4af6-8eeb-d16cff3eb13d/linked_in_profile";
+    window.open(azure, "_blank");
+  };
+
   return (
     <Container>
       <Header>
         <a href="#sobre-mi">Sobre Mí</a>
         <a href="#social">Social</a>
         <a href="#proyectos">Proyectos</a>
+        <a href="#logros">Logros</a>
         <a href="#habilidades">Habilidades</a>
       </Header>
       <h2 id="sobre-mi">Sobre Mí</h2>
@@ -87,8 +104,8 @@ const App = () => {
           <div>
             <h3>Sergi Treviño</h3>
             <p>
-              Desarrollador Full-Stack, apasionado por la programación y el
-              desarrollo tecnológico.
+              Desarrollador Full-Stack Junior, apasionado por la programación y
+              el desarrollo tecnológico.
             </p>
           </div>
         </SobreMi>
@@ -200,6 +217,17 @@ const App = () => {
           </Proyecto>
         </ProyectosRow>
       </Proyectos>
+      <Logros>
+        <h2 id="logros">Logros</h2>
+        <LogrosRow>
+          <Logro>
+            <img onClick={handleAzure} src={Azure} alt="" />
+          </Logro>
+          <Logro>
+            <img onClick={handleJava} src={Esplai} alt="" />
+          </Logro>
+        </LogrosRow>
+      </Logros>
       <Habilidades>
         <h2 id="habilidades">Habilidades</h2>
         <br />

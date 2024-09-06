@@ -69,12 +69,22 @@ export const SobreMi = styled.div`
   padding: 10px;
   border-radius: 10px;
   gap: 20px;
+  margin-left: 20px;
 
   img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 4px solid #f5b44d;
+    animation: borderGlow 2s infinite alternate;
+
+    @keyframes borderGlow {
+      0% {
+        box-shadow: 0 0 10px 2px #f5b44d, 0 0 20px 4px #f5b44d;
+      }
+      100% {
+        box-shadow: 0 0 10px 2px red, 0 0 20px 4px red;
+      }
+    }
   }
 
   div {
@@ -423,5 +433,43 @@ export const Habilidad = styled.div`
 
   p {
     font-size: 1.4rem;
+  }
+`;
+
+export const Logros = styled.div`
+  width: 80%;
+  margin-bottom: 50px;
+  h2 {
+    text-align: center;
+    color: #f5b44d;
+  }
+`;
+
+export const LogrosRow = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center; /* Centra los elementos */
+  }
+`;
+
+export const Logro = styled.div`
+  display: flex;
+  border-radius: 15px;
+  align-items: center;
+  gap: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 20px;
+
+  img {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
   }
 `;
