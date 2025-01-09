@@ -26,6 +26,8 @@ import {
 import image from "./assets/159159635.png";
 import cv from "./assets/Currículum.pdf";
 import purgatio from "./assets/purgatio.png";
+import mandarina2 from "./assets/Captura2.png";
+import mandarina from "./assets/Captura1.PNG";
 import purgatioLobby from "./assets/lobby.png";
 import rickAndMorty from "./assets/home.png";
 import rickAndMorty2 from "./assets/foto2.png";
@@ -37,6 +39,7 @@ import { FaSquareGithub } from "react-icons/fa6";
 import { FaReact } from "react-icons/fa";
 import { BiLogoSpringBoot } from "react-icons/bi";
 import { SiMysql } from "react-icons/si";
+import { SiPostgresql } from "react-icons/si";
 import { FaHtml5 } from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
@@ -72,6 +75,11 @@ const App = () => {
     window.open(purgatio, "_blank");
   };
 
+  const handleMandarina = () => {
+    const mandarina = "https://web-restaurante-lyart.vercel.app";
+    window.open(mandarina, "_blank");
+  };
+
   const handleRickAndMorty = () => {
     const rickAndMorty = "https://api-rick-morty-theta.vercel.app";
     window.open(rickAndMorty, "_blank");
@@ -104,8 +112,9 @@ const App = () => {
           <div>
             <h3>Sergi Treviño</h3>
             <p>
-              Desarrollador Full-Stack Junior, apasionado por la programación y
-              el desarrollo tecnológico.
+              Soy un desarrollador full stack junior con una base sólida en el
+              desarrollo web y una gran pasión por aprender y crecer en el
+              campo.
             </p>
           </div>
         </SobreMi>
@@ -156,6 +165,40 @@ const App = () => {
       <Proyectos>
         <h2 id="proyectos">Proyectos</h2>
         <ProyectosRow>
+          <Proyecto>
+            <h3>Web restaurante Mandarina</h3>
+            <p>
+              Este proyecto es una aplicación web desarrollada con una
+              arquitectura Full Stack, utilizando React para el front-end,
+              Spring Boot para el back-end y PostgreSQL como sistema de gestión
+              de bases de datos. <br />
+              <br />
+              Cuando el cliente hace una reserva desde la web, tanto como el
+              cliente y el restaurante reciben un correo de confirmación. Los
+              administradores pueden gestionar las reservas, con opciones para
+              listar, modificar o eliminar registros directamente desde una
+              interfaz dedicada.
+            </p>
+            <TecnologiasProyectoRow>
+              <TecnologiaProyecto>
+                <FaReact /> <p>React</p>
+              </TecnologiaProyecto>
+              <TecnologiaProyecto>
+                <BiLogoSpringBoot /> <p>SpringBoot</p>
+              </TecnologiaProyecto>
+              <TecnologiaProyecto>
+                <IoLogoJavascript /> <p>JavaScript</p>
+              </TecnologiaProyecto>
+              <TecnologiaProyecto>
+                <SiPostgresql /> <p>PostgreSQL</p>
+              </TecnologiaProyecto>
+              <TecnologiaProyecto>
+                <FaCss3Alt /> <p>CSS</p>
+              </TecnologiaProyecto>
+            </TecnologiasProyectoRow>
+            <img onClick={handleMandarina} src={mandarina} alt="" />
+            <img onClick={handleMandarina} src={mandarina2} alt="" />
+          </Proyecto>
           <Proyecto>
             <h3>Purgatio</h3>
             <p>

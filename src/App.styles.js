@@ -82,7 +82,7 @@ export const SobreMi = styled.div`
         box-shadow: 0 0 10px 2px #f5b44d, 0 0 20px 4px #f5b44d;
       }
       100% {
-        box-shadow: 0 0 10px 2px red, 0 0 20px 4px red;
+        box-shadow: 0 0 10px 2px #f5b44d, 0 0 20px 4px #f5b44d;
       }
     }
   }
@@ -339,6 +339,7 @@ export const Proyecto = styled.div`
     width: 350px;
     height: 300px;
     border: 2px solid #f5b44d;
+    object-fit: cover;
     cursor: pointer;
     margin: 20px;
     transition: transform 0.3s ease; /* Añade una transición suave */
