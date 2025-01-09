@@ -27,7 +27,7 @@ import image from "./assets/159159635.png";
 import cv from "./assets/Currículum.pdf";
 import purgatio from "./assets/purgatio.png";
 import mandarina2 from "./assets/Captura2.png";
-import mandarina from "./assets/Captura1.PNG";
+import mandarina from "./assets/Captura1.png";
 import purgatioLobby from "./assets/lobby.png";
 import rickAndMorty from "./assets/home.png";
 import rickAndMorty2 from "./assets/foto2.png";
