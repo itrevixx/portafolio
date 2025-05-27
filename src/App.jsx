@@ -76,7 +76,7 @@ const App = () => {
   };
 
   const handleMandarina = () => {
-    const mandarina = "https://web-restaurante-lyart.vercel.app";
+    const mandarina = "https://restaurante-frontend-one.vercel.app";
     window.open(mandarina, "_blank");
   };
 
